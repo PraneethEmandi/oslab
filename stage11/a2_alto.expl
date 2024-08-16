@@ -1,0 +1,36 @@
+type
+    Student
+    {
+    str name;
+    int marks;
+    }
+endtype
+
+int main(){
+    decl
+        Student s1,s2;
+        int retval;
+    enddecl
+    begin
+        // retval=exposcall("Heapset");
+        retval = initialize();
+        // s1=exposcall("Alloc",2);
+        s1 = alloc();
+        s2 = alloc();
+        s1.name="John";
+        s1.marks = 89;
+        s1.marks = s1.marks + 2;
+        // retval=exposcall("Write",-2,s1.name);
+        // retval=exposcall("Write",-2,s1.marks);
+        write(s1.name);
+        write(s1.marks);
+        //retval=exposcall("Free",s1);
+        free(s1);
+        if ( s1 == null ) then
+            write("OK");
+        endif;
+        //retval=exposcall("Write",-2,retval);
+
+        return 0;
+    end
+}
