@@ -1,0 +1,30 @@
+int main()
+{
+    decl
+        type Student
+        {
+            str name;
+            int marks;
+        };
+
+        Student *s;
+        int temp;
+    enddecl
+    begin
+        // Initialize the heap (this step may vary based on your environment)
+        temp = Heapset(); 
+
+        // Allocate memory for the Student variable
+        s = Alloc(sizeof(Student)); 
+
+        // Assign values to the attributes
+        s->name = "John";
+        s->marks = 89;
+
+        // Print the values to the terminal
+        temp = Write(-2, s->name);
+        temp = Write(-2, s->marks);
+
+        return 0;
+    end
+}
