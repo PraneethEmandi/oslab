@@ -1,12 +1,13 @@
 int main()
 {
     decl
-        int num, temp;
+        int num, temp, remainder;
     enddecl
     begin
         num = 1;
         while (num <= 100) do
-            if (num % 2 != 0) then
+            remainder = num % 2;
+            if (remainder != 0) then
                 temp = exposcall("Write", -2, num);
             endif;
             num = num + 1;
